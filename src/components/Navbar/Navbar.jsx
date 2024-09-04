@@ -65,7 +65,7 @@ export default function Navbar() {
                         </Link></li>
                         <li><button to={'signout'} onClick={logOut}><NavLink>SignOut</NavLink></button> </li>
                     </>
-                        : <> <li><NavLink to={'/'}>Register</NavLink></li><li><NavLink to={'login'}>Login</NavLink></li></>}
+                        : <> <li><NavLink to={''}>Register</NavLink></li><li><NavLink to={'login'}>Login</NavLink></li></>}
 
 
                 </ul>
