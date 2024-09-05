@@ -38,7 +38,7 @@ export default function Checkout() {
             phone: "",
             city: ""
         },
-        onSubmit: () => handleCheckout(id, 'https://mahmoudmohsen23.github.io/E-Commerce-with-React.js/#/')
+        onSubmit: () => handleCheckout(id, 'http://localhost:5173')
     })
 
 
