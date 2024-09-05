@@ -14,12 +14,12 @@ export default function Checkout() {
     let [isOnlinePayment, setIsOnlinePayment] = useState(false)
     let navigate = useNavigate()
 
-    async function handleCheckout(cartId) {
+    async function handleCheckout(cartId, url) {
         setIsLoading(true)
-        let { data } = await checkout(cartId, myForm.values)
+        let { data } = await checkout(cartId, url, myForm.values)
         let checkoutUrl = `https://ecommerce.routemisr.com/api/v1/orders/${cartId}`
         if (isOnlinePayment) {
-            checkoutUrl = `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=https://mahmoudmohsen23.github.io/E-Commerce-with-React.js/`
+            checkoutUrl = `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=${url}`
         }
         if (data.status == 'success') {
             setIsLoading(false)
@@ -38,7 +38,7 @@ export default function Checkout() {
             phone: "",
             city: ""
         },
-        onSubmit: () => handleCheckout(id)
+        onSubmit: () => handleCheckout(id, 'http://localhost:5173')
     })
 
 
