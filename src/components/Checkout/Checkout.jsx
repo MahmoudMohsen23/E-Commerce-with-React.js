@@ -19,7 +19,7 @@ export default function Checkout() {
         let { data } = await checkout(cartId, myForm.values)
         let checkoutUrl = `https://ecommerce.routemisr.com/api/v1/orders/${cartId}`
         if (isOnlinePayment) {
-            checkoutUrl = `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=https://mahmoudmohsen23.github.io/E-Commerce-with-React.js/`
+            checkoutUrl = `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=https://mahmoudmohsen23.github.io/E-Commerce-with-React.js`
         }
         if (data.status == 'success') {
             setIsLoading(false)
