@@ -82,9 +82,9 @@ export default function CartContextProvider({ children }) {
         }
     }
 
-    async function checkout(cartId, url, formValues) {
+    async function checkout(cartId, formValues) {
         try {
-            let response = await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=${url}`, {
+            let response = await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=https://mahmoudmohsen23.github.io/E-Commerce-with-React.js/`, {
                 shippingAddress: formValues
             }, {
                 headers
@@ -114,7 +114,7 @@ export default function CartContextProvider({ children }) {
 
     useEffect(() => { getCart() }, [])
 
-    return <CartContext.Provider value={{cartItemsNo, setCartItemsNo, cart, setCart, getLoggedUserCart, addProductToCart, updateCartItemCount, deleteProductItem, clearCart, checkout, getOrders }}>
+    return <CartContext.Provider value={{ cartItemsNo, setCartItemsNo, cart, setCart, getLoggedUserCart, addProductToCart, updateCartItemCount, deleteProductItem, clearCart, checkout, getOrders }}>
         {children}
     </CartContext.Provider>
 }
